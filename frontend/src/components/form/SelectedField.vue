@@ -6,13 +6,13 @@ defineProps({
     error: String,
     placeholder: String,
 })
-defineEmits(['update:modelValue', 'blur'])
+defineEmits(['update:modelValue', 'change'])
 </script>
 
 <template>
     <div class="form-row">
         <label>{{ label }}</label>
-        <select>
+        <select :value="modelValue" @change="$emit('update:modelValue', $event.target.value); $emit('change')">
             <option value="" disabled>{{ placeholder || 'Select...' }}</option>
             <option 
             v-for="opt in $options" 
