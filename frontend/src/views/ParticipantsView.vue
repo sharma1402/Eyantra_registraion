@@ -8,6 +8,7 @@ const countries = ref([]);
 const colleges = ref([]);
 const registrations = ref([]);
 const filterCountry = ref('');
+const filterCollege = ref('');
 const loading = ref(false);
 
 async function loadData() {
