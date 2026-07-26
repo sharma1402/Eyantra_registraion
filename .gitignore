@@ -28,7 +28,6 @@ backend/logs/
 # Environment
 .env
 .env.local
-.env.example
 
 # OS
 .DS_Store
