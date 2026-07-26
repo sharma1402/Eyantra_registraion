@@ -1,4 +1,4 @@
-const BASE = 'api';
+const BASE = '/api';
 
 async function request(path, options = {}) {
     const res = await fetch(`${BASE}${path}`, {
@@ -29,5 +29,5 @@ export const api = {
         method: 'POST',
         body: JSON.stringify(form)
     }),
-    getRegistration: (params) => request(`/registration?${new URLSearchParams(params)}`)
+    getRegistrations: (params) => request(`/registrations?${new URLSearchParams(params)}`)
 }

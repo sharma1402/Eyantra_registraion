@@ -13,8 +13,12 @@ defineProps({
             <tr>
                 <th>Name</th>
                 <th>Email</th>
-                <th>country</th>
-                <th>college</th>
+                <th>Country</th>
+                <th>College</th>
+                <th>Contact Number</th>
+                <th>Gender</th>
+                <th>year</th>
+                <th>domain</th>
             </tr>
         </thead>
         <tbody>
@@ -23,6 +27,10 @@ defineProps({
                 <td>{{ r.email }}</td>
                 <td>{{ r.country }}</td>
                 <td>{{ r.college }}</td>
+                <td>{{ r.contact }}</td>
+                <td>{{ r.gender }}</td>
+                <td>{{ r.year }}</td>
+                <td>{{ r.domain }}</td>
             </tr>
         </tbody>
     </table>

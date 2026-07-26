@@ -6,6 +6,11 @@ const emit = defineEmits(['update:verified']);
 
 const { otp, otpSent, otpVerified, devOtp, message, sendOtp, verifyOtp } = useOtpVerification();
 
+async function handleSend() {
+    if (!props.emailValid) return;
+    await sendOtp(props.email);
+}
+
 async function handleVerify() {
     await verifyOtp(props.email);
     emit('update:verified', otpVerified.value);

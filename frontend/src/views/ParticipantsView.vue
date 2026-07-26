@@ -16,7 +16,7 @@ async function loadData() {
     const params = {};
     if(filterCountry.value) params.country = filterCountry.value;
     if(filterCollege.value) params.college = filterCollege.value;
-    registrations.value = await api.getRegistration(params)
+    registrations.value = await api.getRegistrations(params)
     loading.value = false;
 }
 
@@ -26,13 +26,13 @@ onMounted(async () => {
     await loadData();
 });
 
-watch([filterCountry, filterCountry])
+watch([filterCountry, filterCollege], loadData);
 </script>
 
 <template>
   <div class="card">
     <h2>Registered Participants</h2>
-    <ParticipantFilters :countries="countries" :colleges="colleges" v-model:country="filterCountry" v-model:college="filterCollege" />
+    <ParticipantFilter :countries="countries" :colleges="colleges" v-model:country="filterCountry" v-model:college="filterCollege" />
     <ParticipantsTable :registrations="registrations" :loading="loading" />
   </div>
 </template>

@@ -29,7 +29,7 @@ async function handleSubmit() {
 
 <template>
     <div class="card">
-        <h2>Competition Registration</h2>
+        <h2>Eyantra Competition Registration</h2>
         <AppBanner :type="banner.type" :text="banner.text" />
 
         <form @submit.prevent="handleSubmit" novalidate>
