@@ -1,4 +1,4 @@
-<script>
+<script setup>
 defineProps({ 
     modelValue: String,
     label: String,
@@ -12,8 +12,7 @@ defineEmits(['update:modelValue', 'change'])
 <template>
     <div class="form-row">
         <label>{{ label }}</label>
-        <label>{{ label }}</label>
-        <label v-for="opt in $options" :key="opt" class="radio">
+        <label v-for="opt in options" :key="opt" class="radio">
         <input type="radio" :value="opt" :checked="modelValue === opt"
                 @change="$emit('update:modelValue', opt); $emit('change')" /> {{ opt }}
         </label>
@@ -24,6 +23,7 @@ defineEmits(['update:modelValue', 'change'])
 <style scoped>
 .form-row{ margin-bottom: 18px; }
 label{ display: block; font-weight: 600; margin-bottom: 6px; font-size: 14px; }
-input { padding: 8px 10px; border: 1px solid var(--border); border-radius: 5px; width: 100%; max-width: 320px; }
+.radio{ display: inline-flex; align-items: center; gap: 4px; margin-right: 16px; font-weight: 400; }
+input { width: auto; }
 .error { color: #c62828; font-size: 13px; margin-top: 4px; }
 </style>

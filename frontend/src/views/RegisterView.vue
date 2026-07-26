@@ -14,7 +14,7 @@ const colleges = ref([]);
 const otpVerified = ref(false);
 const fieldOrder = ['name', 'contact', 'gender', 'email', 'year', 'domain', 'country', 'college'];
 
-const { from, errors, banner, submitting, validateField, submit } = useRegistrationForm();
+const { form, errors, banner, submitting, validateField, submit } = useRegistrationForm();
 
 onMounted(async () => {
     countries.value = await api.getCountries();
@@ -34,7 +34,7 @@ async function handleSubmit() {
 
         <form @submit.prevent="handleSubmit" novalidate>
             <TextField v-model="form.name" label="Full name" :error="errors.name" @blur="validateField('name')"/>
-            <TextField v-model="from.contact" label="Contact Number" :error="errors.contact" maxlength="10" @blur="validateField('contact')"/>
+            <TextField v-model="form.contact" label="Contact Number" :error="errors.contact" maxlength="10" @blur="validateField('contact')"/>
             <RadioGroup v-model="form.gender" label="Gender" :options="GENDERS" :error="errors.gender" @change="validateField('gender')"/>
             <EmailVerificationField v-model="form.email" v-model:verified="otpVerified" :error="errors.email" @blur="validateField('email')"/>
             <SelectedField v-model="form.year" label="Year" :options="YEARS" :error="errors.year" @change="validateField('year')"/>

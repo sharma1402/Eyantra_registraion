@@ -1,6 +1,6 @@
 // Registration form composable
 import { reactive, ref } from 'vue';
-import { api } from '@/service/api';
+import { api } from '@/services/api';
 import { VALIDATORS } from '@/constants/formOptions';
 
 export function useRegistrationForm() {

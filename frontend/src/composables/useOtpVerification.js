@@ -1,5 +1,5 @@
 import { ref } from 'vue';
-import { api } from '@/service/api';
+import { api } from '@/services/api';
 
 export function useOtpVerification() {
     const otp = ref('');

@@ -1,4 +1,4 @@
-<script>
+<script setup>
 defineProps({ 
     modelValue: String,
     label: String,
@@ -15,7 +15,7 @@ defineEmits(['update:modelValue', 'change'])
         <select :value="modelValue" @change="$emit('update:modelValue', $event.target.value); $emit('change')">
             <option value="" disabled>{{ placeholder || 'Select...' }}</option>
             <option 
-            v-for="opt in $options" 
+            v-for="opt in options" 
             :key="opt" 
             :value="opt"
             >
@@ -29,6 +29,6 @@ defineEmits(['update:modelValue', 'change'])
 <style scoped>
 .form-row{ margin-bottom: 18px; }
 label{ display: block; font-weight: 600; margin-bottom: 6px; font-size: 14px; }
-input { padding: 8px 10px; border: 1px solid var(--border); border-radius: 5px; width: 100%; max-width: 320px; }
+select { padding: 8px 10px; border: 1px solid var(--border); border-radius: 5px; width: 100%; max-width: 320px; }
 .error { color: #c62828; font-size: 13px; margin-top: 4px; }
 </style>
