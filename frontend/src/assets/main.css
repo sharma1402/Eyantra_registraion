@@ -1,35 +1,20 @@
-@import './base.css';
-
-#app {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
-  font-weight: normal;
+:root {
+  --primary: #d32f2f;
+  --primary-dark: #a31515;
+  --border: #dcdde1;
+  --text: #222;
 }
-
-a,
-.green {
-  text-decoration: none;
-  color: hsla(160, 100%, 37%, 1);
-  transition: 0.4s;
-  padding: 3px;
+body { 
+  margin: 0; 
+  font-family: 'Segoe UI', 
+  Roboto, Arial, sans-serif; 
+  background: #f4f5f7; 
+  color: var(--text); 
 }
-
-@media (hover: hover) {
-  a:hover {
-    background-color: hsla(160, 100%, 37%, 0.2);
-  }
-}
-
-@media (min-width: 1024px) {
-  body {
-    display: flex;
-    place-items: center;
-  }
-
-  #app {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    padding: 0 2rem;
-  }
+.card { 
+  background: #fff; 
+  border: 1px solid var(--border); 
+  border-radius: 8px; padding: 28px; 
+  box-shadow: 0 1px 3px rgba(0,0,0,0.06); 
+  max-width: 780px; margin: 30px auto; 
 }
