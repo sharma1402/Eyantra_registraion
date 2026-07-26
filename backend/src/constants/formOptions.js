@@ -10,4 +10,4 @@ const NAME_REGEX = /^[A-Za-z ]{2,60}$/
 const CONTACT_REGEX = /^[0-9]{10}$/
 const EMAIL_REGEX = /^[^\s@]+@[^\s@]+\.[^\s@]+$/
 
-export default { YEARS, DOMAINS, GENDERS, NAME_REGEX, CONTACT_REGEX, EMAIL_REGEX }
+module.exports = { YEARS, DOMAINS, GENDERS, NAME_REGEX, CONTACT_REGEX, EMAIL_REGEX }
