@@ -1,4 +1,3 @@
-// Registration form composable
 import { reactive, ref } from 'vue';
 import { api } from '@/services/api';
 import { VALIDATORS } from '@/constants/formOptions';
